@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+        <h1> Welcome! </h1>
+        <h2>Search for a user:</h2>
+        
+        <form action="/pagetwo" method="post">
+            <input type="search" name="lastname" placeholder="Search.."><br>
+            <input type="submit" value="Search" >
+          </form>
+
+<h2>We found a match!</h2>
+<p> <%= 'First Name: ' + user.firstname %></p> <%# on this line the ejs tells to print an output of the objects 'firstname' and 'lastname'%>
+<p> <%= 'Last Name: ' + user.lastname %></p>
+<p> <%= 'Email: ' + user.email %> </p>
+
+<br>
+<h1> Add New User</h1>
+<h2>Fill in 'new user' details below:</h2>
+<form action="/index" method="get">
+<input type="text" name="firstname" placeholder="Your Name.."><br>
+<input type="text" name="lastname" placeholder="Your Last Name.."><br>
+<input type="text" name="email" placeholder="Your Email.."><br>
+<input type="submit" value="Add" >
+</form>
+</body>
+</form>
+</body>

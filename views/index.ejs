@@ -1,0 +1,18 @@
+<!-- this is our template -->
+<!DOCTYPE html>
+<head>
+        <script type="text/javascript"></script>
+</head>
+<body> 
+<h1> Welcome! </h1>
+<h2>Here is all the users in our database:</h2>
+<% user.forEach(function(file) {%>
+    <p> <%= file.firstname + ' ' + file.lastname %></p>
+    <%});%>
+<h2>Search for a user:</h2>
+
+<form action="/pagetwo" method="post">
+    <input type="search" name="firstname" placeholder="Search.."><br> <%# name here is important for making the server and client side communicate%>
+    <input type="submit" name="lastname" value="Search" >
+  </form>
+</body>
