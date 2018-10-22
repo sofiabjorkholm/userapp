@@ -27,8 +27,7 @@ fs.readFile('./users.json', (function (err, data) { //callback function
   } 
   var file = JSON.parse(data);
   console.log(file)
-}))//callback function reading the data on the server side --> NEXT STEP: 
-// make the algorithm run on the server side, and shows the result on the client side on pagetwo
+}))
 
 app.post('/pagetwo', function(req,res){ //ROUTE THREE - SHOWS THE MATCHING USER ON NEW PAGE
   fs.readFile('./users.json', (function (err, data) { //callback function
@@ -44,9 +43,6 @@ app.post('/pagetwo', function(req,res){ //ROUTE THREE - SHOWS THE MATCHING USER 
         console.log('User: ' + files[i].firstname + ' ' + files[i].lastname); // prints the objects from the module 'users.json'
         res.render('pagetwo', {user: file[i]})
       }
-      // else if (userInput1 !== files[i].firstname || userInput2 !== files[i].lastname) {
-      //   res.render('pagetwo', {user: 'Sorry, no user found!'})
-      // }
       }
     }
     userfinder(file)
@@ -78,42 +74,4 @@ app.post('/pagetwo', function(req,res){ //ROUTE FOUR - RENDERS A PAGE WITH 'ADD 
       }
       res.redirect('/index', {user: file.users.firstname, user: file.users.lastname, user: file.users.email})
     }
-  
-  //   fs.writeFile('./users.json', data); {
-  //     let input = JSON.stringify(data, null, 2);
-  //     data = req.params;
-  //   input[firstname] = lastname;
-  //   //     var button = select('#submit');
-  //   //       button.mousePressed(submitWord);
-  //   // }
-  //   //   function drawData() {
-  //   //     loadJSON('all');
-  //   //   }
-      
-  //   //   function submitWord() {
-  //   //     var firstname = select('#firstname').value();
-  //   //     var lastname = select('#lastname').value();
-  //   //     console.log(firstname, lastname);
-      
-  //   //     loadJSON('add/' + firstname + '/' + lastname, finished);
-      
-  //   //     function finished(data) {
-  //   //       console.log(data);
-  //   //       drawData();
-  //   //     }   
-  //   res.redirect('index', {user: file.firstname, user: file.lastname, user: file.email})
-  // }})
-
-  
-
-
-// app.get('/route2', function(req, res) {
-//   fs.readFile('./users.json', (function (err, data) { //callback function
-//     if (err) { //if error print error
-//       throw err;
-//     } 
-//     var file = JSON.parse(data); //parses the object constructing the javascript value
-//     res.render('pagetwo', {user: file}) // user= the key, file= the object. the key is used in the index to print the information within the json file
-//   }))
-//   })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`)) 
