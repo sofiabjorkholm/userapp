@@ -1,10 +1,4 @@
- <% user.forEach(function(file) {%> <%# this loops through the objects %>
-<p> <%= file.firstname + ' ' + file.lastname %></p> <%# on this line the ejs tells to print an output of the objects 'firstname' and 'lastname'%>
-<%});%>
 
-<%# 
-<%# <% user.forEach(function(file) {%> this loops through the objects %>
-    <%# + ' ' + file.lastname on this line the ejs tells to print an output of the objects 'firstname' and 'lastname'<%});%> %>
 Create two more routes:
 - route 2: renders a page that displays a form which is your search bar. 
 (browser rendering engine.) 
@@ -26,4 +20,4 @@ redirects to the route that displays all your users (from part 0).
 
 //http://localhost:3000/index?firstname=Sofia&lastname=Bjorkholm&email=sofia.bjorkholm%40hotmail.com
 
-?=query 
+now showing it as a query (?) -> need it to be read as params not as query.. 

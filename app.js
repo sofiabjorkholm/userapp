@@ -4,8 +4,9 @@ const app = express()
 const port = 3000
 const fs= require('fs'); // this will include the File System module - file system module allows you to work with the file system on your computer.
 var bodyParser = require('body-parser')
+const file =
 
-app.set('view engine', 'ejs') // includes the .ejs file in the 'views' folder. 
+app.set('view engine', 'ejs', 'js') // includes the .ejs file in the 'views' folder. 
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -47,31 +48,31 @@ app.post('/pagetwo', function(req,res){ //ROUTE THREE - SHOWS THE MATCHING USER 
     }
     userfinder(file)
 }))})
+app.get('/pagetwo', function (req, res) {; //ROUTE FOUR --> redirect to index with added user to the list
+  res.render('/pagetwo')
+})
 
+  app.post('/', function(req,res){ //ROUTE FIVE RENDERS A PAGE WITH ADD USER
 
-app.post('/pagetwo', function(req,res){ //ROUTE FOUR - RENDERS A PAGE WITH 'ADD USER'
-  fs.readFile('./users.json', (function (err, data) { //callback function
-    if (err) { //if error print error
-      throw err;
-    } 
-    let file = JSON.parse(data);
-    console.log(file)
-    res.render('pagetwo')
+      fs.readFile('./users.json', (function (err, data) { //callback function
+        if (err) { //if error print error
+          throw err;
+        } 
+        let object = JSON.parse(data);
+        let newUser = {
+            firstname: req.body.addFirstname, 
+            lastname: req.body.addLastname,
+            email: req.body.addEmail, 
+        }
+        object.push(newUser)
 
-  }))})
-  
-  app.post('/pagetwo/:firstname/:lastname/:email?', addUser)  //ROUTE FIVE GOES BACK TO INDEX AND ADDS NEW USER TO THE LIST
-    function addUser (req, res) {
-      let users = req.params 
-      users.firstname === firstname
-      users.lastname === lastname
-      users.email === email
+        let addJson = JSON.stringify(object, null, 2);
 
-      let file = JSON.stringify(data, null, 2)
-      fs.writeFile('users.json', users, finished)
-      function finished(err) {
-        console.log('great, file is updated!')
-      }
-      res.redirect('/index', {user: file.users.firstname, user: file.users.lastname, user: file.users.email})
-    }
-app.listen(port, () => console.log(`Example app listening on port ${port}!`)) 
+         fs.writeFile('./users.json', addJson, function (err, data){
+           if (err) throw err}) //fs.appendFile will not overwrite but just add to JSON.
+      }  
+  ))
+  res.redirect('/')
+})
+
+app.listen(port, () => console.log(`user info app listening on port ${port}!`)) 
