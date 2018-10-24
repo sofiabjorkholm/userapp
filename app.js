@@ -4,9 +4,9 @@ const app = express()
 const port = 3000
 const fs= require('fs'); // this will include the File System module - file system module allows you to work with the file system on your computer.
 var bodyParser = require('body-parser')
-const file =
 
-app.set('view engine', 'ejs', 'js') // includes the .ejs file in the 'views' folder. 
+
+app.set('view engine', 'ejs') // includes the .ejs file in the 'views' folder. 
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
