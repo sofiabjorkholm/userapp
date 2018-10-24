@@ -14,6 +14,19 @@
 
 <form action="/pagetwo" method="post">
     <input type="search" name="firstname" placeholder="Search.."><br> <%# name here is important for making the server and client side communicate%>
-    <input type="submit" value="Search" >
+    <input type="submit" class="button" value="Search" >
   </form>
+<script>
+$('.button').click(function() {
+$.ajax({
+    type: "GET",
+    url: '/index',
+    data: {
+        q: 'prince',type: 'artist'  
+        }
+        ,success: function (response) {
+            console.log(response);  
+}})   
+})
+</script>
 </body>
