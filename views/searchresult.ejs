@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+        <link href="./style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body> 
+<% include ./navbar %>
+        <h4>Check if your friend already signed the petition 
+                <br>by searching the name</h4> <h1><i class="far fa-hand-point-down"></i></h1>
+                            
+        <form action="/searchresult" method="post">
+                <div class="box">
+                        <div class="container-1">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+<input type="search" name="lastname" id="search" placeholder="Search.."><br> <%# name here is important for making the server and client side communicate%>
+</form> </div></div>     
+<h2><p>YES! Your friend has signed the petition! </p></h2>
+<div class="tenor-gif-embed" data-postid="5030326" data-width="40%"><a href="https://tenor.com/view/applause-harrypotter-yay-yes-goodjob-gif-5030326">Applause Harrypotter GIF</a> from <a href="https://tenor.com/search/applause-gifs">Applause GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<br>
+<p> <%= 'First Name: ' + users.firstname %></p>
+<p> <%= 'Last Name: ' + users.lastname %></p>
+<p> <%= 'Email: ' + users.email %> </p>
+
+<h2><p>Do you want more of your friends to sign?</p></h2>
+<br>
+<div class="tenor-gif-embed" data-postid="12382209" data-share-method="host" 
+data-width="40%" data-aspect-ratio="1.6711409395973154"> </div>
+
+<br>Share this <a href= http://awesomepetition.com id=petition>Awesome Petition</a> to spread the word!!
+<br>
+<br>
+<br><a href= http://www.facebook.com id="share">Facebook <i class="fab fa-facebook"></i></a>
+<br>
+<br>
+<a href= http://www.twitter.com id="share">Twitter <i class="fab fa-twitter-square"></i></a>
+<br>
+<br>
+<h2><br>Together we are strong! <i class="far fa-handshake"></i> </p></h2>
+<br>
+<br>
+
+
+</body>

@@ -17,7 +17,3 @@ that allows you to add new users to the users.json file.
 then adds the user to the users.json file. Once that is complete, 
 redirects to the route that displays all your users (from part 0).
 
-
-//http://localhost:3000/index?firstname=Sofia&lastname=Bjorkholm&email=sofia.bjorkholm%40hotmail.com
-
-now showing it as a query (?) -> need it to be read as params not as query.. 
