@@ -48,6 +48,13 @@ app.post('/signatures', function(req,res){ //THIS ROUTE WILL ADD A NEW USER TO J
   }  
 ))
 res.redirect('signatures') //REDIRECTS TO LIST OF USERS WITH ADDED USER
+<<<<<<< HEAD
+=======
+})
+app.post('/searchresult', function(req, res){ // AJAX ASSIGNEMNT
+  console.log('test received!')
+res.send({data: 'this is my data'})
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
 })
 
 app.get('/search', function(req, res) {// render fourth page
@@ -80,6 +87,7 @@ app.post('/searchresult', function(req, res,){ //ROUTE THREE - SHOWS THE MATCHIN
       // }
       // res.render('searchresult', {users: file[i], notFound: msg})
     }
+<<<<<<< HEAD
 
  //can only render a page once, thus use push in the if statement
 }
@@ -91,5 +99,13 @@ app.post('/search', function(req, res){ // AJAX ASSIGNEMNT
   console.log('test received!')
 res.send({data: firstsname})
 })
+=======
+
+ //can only render a page once, thus use push in the if statement
+}
+userfinder(file)
+
+}))})
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
 
 app.listen(port, () => console.log(`user info app listening on port ${port}!`)) 

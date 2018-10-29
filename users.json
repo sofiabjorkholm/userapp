@@ -23,5 +23,13 @@
     "firstname": "Sofia",
     "lastname": "Bjorkholm",
     "email": "sofia.bjorkholm@hotmail.com"
+<<<<<<< HEAD
+=======
+  },
+  {
+    "firstname": "Rens",
+    "lastname": "Bekkers",
+    "email": "rens.bekkers@gmail.com"
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
   }
 ]

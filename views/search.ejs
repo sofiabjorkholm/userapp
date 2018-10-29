@@ -3,7 +3,26 @@
         <link href="./style.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<<<<<<< HEAD
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+=======
+       <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+$( document ).ready(function() {
+    $('#search').click(function() {
+        console.log('button clicked')
+            $.ajax({
+                type: "post",
+                url: '/searchresult',
+                success: function(res) {
+                    alert(res.data) 
+                    },
+                    error: function () {
+                    alert('Cannot find your friend :( Alert her/him now!!')
+        }})   
+    })
+})
+        </script> -->
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
 </head>
 <body> 
 <% include ./navbar %>
@@ -15,11 +34,16 @@
                         <div class="container-1">
                                 <span class="icon"><i class="fa fa-search"></i></span>
  <%# name here is important for making the server and client side communicate%>
+<<<<<<< HEAD
 <input type="search" name="firstname" id="search" placeholder="Search..">
 <ul class='list-group' id='result'></ul>
 </form> </div></div>
 <br>
 
+=======
+<input type="search" name="firstname" id="search" placeholder="Search.."><br>
+</form> </div></div>
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
 <div id=sharing> <br>Share this <a href= http://awesomepetition.com id=petition>Awesome Petition </a> to spread the word!!
 <br>
 <br>
@@ -29,6 +53,7 @@
 <a href= http://www.twitter.com id="share">  Twitter <i class="fab fa-twitter-square"></i></a>
 <br>
 <br>Together we are strong! <i class="far fa-handshake"></i> 
+<<<<<<< HEAD
 </p></div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
         $( document ).ready(function() {
@@ -48,4 +73,9 @@
 });
                 </script>
 
+=======
+</p>
+
+</div>
+>>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
 </body>
