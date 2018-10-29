@@ -141,11 +141,7 @@ li a:hover {
     position: absolute;
     top: 50%;
     margin-left: 270px;
-<<<<<<< HEAD
     margin-top: -15px;
-=======
-    margin-top: -8px;
->>>>>>> b231523ec93fd150ffdd01bc2d08132ba54fa079
     z-index: 1;
     color: #4f5b66;
   }
