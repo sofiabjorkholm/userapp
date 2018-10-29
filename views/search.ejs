@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+        <link href="./style.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body> 
+<% include ./navbar %>
+        <h4>Check if your friend already signed the petition 
+                <br>by searching the name</h4> <h1><i class="far fa-hand-point-down"></i></h1>
+                            
+        <form action="/searchresult" method="post">
+                <div class="box">
+                        <div class="container-1">
+                                <span class="icon"><i class="fa fa-search"></i></span>
+ <%# name here is important for making the server and client side communicate%>
+<input type="search" name="firstname" id="search" placeholder="Search..">
+<ul class='list-group' id='result'></ul>
+</form> </div></div>
+<br>
+
+<div id=sharing> <br>Share this <a href= http://awesomepetition.com id=petition>Awesome Petition </a> to spread the word!!
+<br>
+<br>
+        <br><a href= http://www.facebook.com id="share"> Facebook <i class="fab fa-facebook"></i></a>
+<br>
+<br>
+<a href= http://www.twitter.com id="share">  Twitter <i class="fab fa-twitter-square"></i></a>
+<br>
+<br>Together we are strong! <i class="far fa-handshake"></i> 
+</p></div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        $( document ).ready(function() {
+            $('#search').keyup(function() {
+                $('#result').html('')
+                var searchField = $('#search').val();
+                var expression = new RegExp(searchField, 'i');
+                $getJSON('users.json', function(data){
+                        $.each(data, function (key, value){
+                                if (value.firstname.search(expression) != -1 || value.lastname.search(expression))
+                          {
+                                        $('#result').append(<li classs='list-group'>'+value.firstname+' | '+value.lastname+'</li>);
+                                }
+                        });
+                });
+        });
+});
+                </script>
+
+</body>
