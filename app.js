@@ -71,7 +71,7 @@ app.post('/searchresult', function(req, res,){ //ROUTE THREE - SHOWS THE MATCHIN
     
       function userfinder (obj) { 
         for (let i =0; i<obj.length; i++){ // running through the file users.json
-          if ( firstname === obj[i].firstname || lastname === obj[i].lastname){
+          if ( firstname === obj[i].firstname.toLowerCase() || lastname === obj[i].lastname.toLowerCase()){
              res.render('searchresult', {users:file[i]})//return res.render('searchresult', {users: file[i]})
 
       } 
@@ -86,10 +86,36 @@ app.post('/searchresult', function(req, res,){ //ROUTE THREE - SHOWS THE MATCHIN
 userfinder(file)
 
 }))})
-
+// app.get('/test', function(req, res) {// render fourth page
+//   res.render('test')
+// })
 app.post('/search', function(req, res){ // AJAX ASSIGNEMNT
-  console.log('test received!')
-res.send({data: firstsname})
+  console.log(req.body)
+  fs.readFile('./users.json', (function (err, data) { //callback function
+    if (err) { //if error print error
+      throw err;
+    } 
+    let users = JSON.parse(data);
+    let search = req.body.search
+    console.log(search)
+    searchResult = []
+    //CLIENT SIDE INPUT WILL BE SENT TO THE SERVER SIDE WITH THE BODY PARSER
+    // let lastname = req.body.lastname
+    function userfinder (obj) { 
+      for (let i =0; i<obj.length; i++){ // running through the file users.json
+              // console.log(obj)
+              // obj = JSON.stringify(data)
+        let fullname = (obj[i].firstname + ' ' + obj[i].lastname)
+        if (fullname.toLowerCase().indexOf(search.toLowerCase()) > -1){ //
+          searchResult.push(obj[i])
+          console.log(searchResult)
+        }
+        // need to send, not render a page. object that contains users and search 
+      }
+      res.send(searchResult)    
+    }
+      userfinder(users)
+}))
 })
 
 app.listen(port, () => console.log(`user info app listening on port ${port}!`)) 

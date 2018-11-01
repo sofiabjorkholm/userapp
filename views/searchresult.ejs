@@ -15,12 +15,9 @@
                                 <span class="icon"><i class="fa fa-search"></i></span>
 <input type="search" name="lastname" id="search" placeholder="Search.."><br> <%# name here is important for making the server and client side communicate%>
 </form> </div></div>     
-<h2><p>YES! Your friend has signed the petition! </p></h2>
+<h2><p>YES! <%=users.firstname%> <%=users.lastname%> has signed the petition! </p></h2>
 <div class="tenor-gif-embed" data-postid="5030326" data-width="40%"><a href="https://tenor.com/view/applause-harrypotter-yay-yes-goodjob-gif-5030326">Applause Harrypotter GIF</a> from <a href="https://tenor.com/search/applause-gifs">Applause GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 <br>
-<p> <%= 'First Name: ' + users.firstname %></p>
-<p> <%= 'Last Name: ' + users.lastname %></p>
-<p> <%= 'Email: ' + users.email %> </p>
 
 <h2><p>Do you want more of your friends to sign?</p></h2>
 <br>

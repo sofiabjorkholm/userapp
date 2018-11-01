@@ -6,7 +6,7 @@
 
 var fruits = ['apple', 'orange', 'pineapple', 'orange']
 
-var find = fruits.indexOf('pineapple')
+var find = fruits.indexOf('banana')
 console.log(find)
 
 // now, write a function that finds all the indexes of where the value is 
@@ -41,4 +41,4 @@ function getAllIndexes(arr, val) {
 
 }
 
-getAllIndexes(fruits, "orange");
+getAllIndexes(fruits, "banana");
